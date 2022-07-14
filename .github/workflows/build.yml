@@ -19,7 +19,8 @@ jobs:
       - name: Build with maven
         run: mvn -B package --file pom.xml
 
-      - uses: actions/checkout@v2
+      - name: list
+        run: ls
       - name: Login to Docker Hub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build Container image
